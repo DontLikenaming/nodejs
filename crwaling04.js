@@ -34,30 +34,5 @@ async function main() {
     for(let item of items){
         console.log(item.sidoName, item.stationName, item.pm10Value, item.pm25Value, item.dataTime);
     }
-
-    /*const dom = cheerio.load(json.data);
-
-    let elements = dom('.book_tit');
-
-
-    elements.each((idx, title)=>{
-        /!*console.log(dom(title).text());*!/
-        titles.push(dom(title).text());
-    })
-
-    elements = dom('.book_writer');
-    elements.each((idx, writer)=>{
-        /!*console.log(dom(writer).text());*!/
-        writers.push(dom(writer).text());
-    })
-
-    elements = dom('.price');
-    elements.each((idx, price)=>{
-        /!*console.log(dom(price).text());*!/
-        prices.push(dom(price).text());
-    })*/
-
-    //저장된 배열 요소 갯수 확인
-    /*console.log(titles.length, writers.length, prices.length);*/
 }
 main();
