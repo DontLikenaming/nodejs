@@ -2,8 +2,8 @@
 // https://www.hanbit.co.kr/store/books/new_book_list.html
 
 // 사용할 패키지 가져오기 : require('패키지 이름') <-` 말고 '를 써야 함
-const axios = require('axios');
-const cheerio = require('cheerio');
+const axios = require('axios');         //axios 관련 라이브러리
+const cheerio = require('cheerio');     //DOM 관련 라이브러리
 
 
 async function main() {
