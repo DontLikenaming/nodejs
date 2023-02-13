@@ -24,15 +24,30 @@ async function main() {
         params : params, headers : headers
     });
 
+    let grade = (val) =>{
+        if(val===null)val=6;
+        let num = parseInt(val);
+        /*        switch(num){
+                    case 1 : return '😀';
+                    case 2 : return '🙂';
+                    case 3 : return '😐';
+                    case 4 : return '😮';
+                    case 5 : return '😱';
+                    default:return '-';
+                }*/
+        let emojis = ['😀', '🙂', '😐', '😮', '😱', '-'];
+
+        return emojis[num-1];
+    }
+
     // 받아온 데이터 확인
 /*    console.log(json.data);*/
     let items = json.data['response']['body']['items']
     /*console.log(items);*/
 
     //미세먼지 정보 출력
-    //pm25Value는 출력 안됨
     for(let item of items){
-        console.log(item.sidoName, item.stationName, item.pm10Value, item.pm25Value, item.dataTime);
+        console.log(item.sidoName, item.stationName, item.pm10Value, grade(item.pm10Grade), item.pm25Value, grade(item.pm25Grade), item.dataTime);
     }
 }
 main();
