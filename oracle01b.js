@@ -1,5 +1,6 @@
 //zipcode2013에서 서울시에 있는 모든 구를 조회하세요
 const oracledb = require('oracledb');
+const dbconfig = require('./dbconfig.js');
 
 async function main() {
     /*const sql = "select distinct GUGUN from zipcode2013 where SIDO = '서울' order by GUGUN";*/
@@ -20,7 +21,7 @@ async function main() {
     try{
         oracledb.initOracleClient({libdir:'C:/Java/instantclient_19_17'});
 
-        conn = await oracledb.getConnection({user: 'bigdata', password: 'bigdata', connectionString: '3.34.53.22:1521/XE'});
+        conn = await oracledb.getConnection(dbconfig);
 
         console.log('오라클 데이터베이스 접속 성공');
 

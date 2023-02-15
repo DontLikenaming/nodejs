@@ -1,4 +1,5 @@
 const oracledb = require('oracledb');
+const dbconfig = require('./dbconfig.js');
 
 async function main() {
     const sql = "select distinct sido from zipcode2013 order by sido";
@@ -14,7 +15,7 @@ async function main() {
         oracledb.initOracleClient({libdir:'C:/Java/instantclient_19_17'});
 
         //오라클 접속정보를 이용해서 오라클 연결객체 생성
-        conn = await oracledb.getConnection({user: 'bigdata', password: 'bigdata', connectionString: '3.34.53.22:1521/XE'});
+        conn = await oracledb.getConnection(dbconfig);
 
         console.log('오라클 데이터베이스 접속 성공');
 

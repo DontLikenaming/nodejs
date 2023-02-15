@@ -2,7 +2,6 @@
 // https://movie.daum.net/main
 // 순위, 영화제목, 평점, 예매율
 
-const axios = require('axios');
 const {Builder, Browser, By, Key, until} = require('selenium-webdriver');
 
 async function main() {

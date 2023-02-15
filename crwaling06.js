@@ -22,14 +22,16 @@ async function main() {
         params : params, headers : headers
     });
 
-    const parser = new XMLParser();
-    let json = parser.parse(xml.data);
+    console.log(xml.data);
 
-    let items = json['response']['body']['items'];
-    /*console.log(items);*/
+    // const parser = new XMLParser();
+    // let json = parser.parse(xml.data);
+
+    let items = xml.data['items'];
+    console.log(items);
 
 
-    for(let item of items['item']){
+    for(let item of items){
         console.log(`측정일자 : ${item.stdDay}
 지역명 : ${item.gubun}
 전일 확진자 수 : ${item.incDec}

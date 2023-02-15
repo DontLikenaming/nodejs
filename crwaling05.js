@@ -26,14 +26,14 @@ async function main() {
         params : params, headers : headers
     });
 
-/*    console.log(xml.data);*/
+    console.log(xml.data);
 
     // XML을 JSON으로 변환하기
     const parser = new XMLParser();
     let json = parser.parse(xml.data);
 
     let items = json['response']['body']['items'];
-/*    console.log(items);*/
+    console.log(items);
 
     // 등급별 이모지
     let grade = (val) =>{
